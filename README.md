@@ -57,7 +57,7 @@ The script uses the `spaCy` library to find noun chunks in a sentence. It then a
 
 	    2. Geopolitical entities listed in a file `countries_w_articles.json`. This list was taken from a [paper](https://www.tandfonline.com/doi/full/10.1080/00277738.2020.1731241) on patterns of definite article use with country names. Particularly, from [the table](https://www.tandfonline.com/doi/full/10.1080/00277738.2020.1731241) 'Distribution of country names in relation to definite article use'.  I only took the countries which had  > 50% percentage of definite article use. 
 
-The form of an indefinite article ('a' or 'an') is identified using the imported library `inflect`. 
+The form of an indefinite article ('a' or 'an') is identified using the `inflect` library. 
 
 
 ## Install
@@ -70,7 +70,7 @@ The dependencies are the following:
 To run the script enter it in the command line and pass it the sentence that you want to process:
     `python article_insertion.py <str>` 
 
-The tests are written with are located in `test_article_insertion.py`.
+The tests are located in `test_article_insertion.py`.
 
 
 ## Examples
