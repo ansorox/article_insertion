@@ -15,7 +15,7 @@ The script uses the `spaCy` library to find noun chunks in a sentence. It then a
     
         2. Noun chunks that are used in plural. Exception: the noun chunks that are immediately preceded by 'all of' (as this construction requires a definite article, see below). 
 
-        3. Noun chunks that are headed by uncountable nouns. The (non-exhaustive) list of uncountable nouns is stored in the file `noncount_nouns.json`. This list is taken from a [page](https://ieltsliz.com/uncountable-nouns-word-list/) of the IELTS preparation website where the properties of uncountable nouns in English are discussed. 
+        3. Noun chunks that are headed by uncountable nouns. The (non-exhaustive) list of uncountable nouns is stored in `worklists/noncount_nouns.json`. This list is taken from a [page](https://ieltsliz.com/uncountable-nouns-word-list/) of the IELTS preparation website where the properties of uncountable nouns in English are discussed. 
 
 	Since in most cases articles are used correctly, most of the noun chunks will be filtered out in this step.
 
@@ -33,15 +33,15 @@ The script uses the `spaCy` library to find noun chunks in a sentence. It then a
 		1. Noun chunks that are used in predicative position and contain adjectives. These are typically descriptions that
 		require an indefinite article. 
 
-		2. Noun chunks containing degree adverbs that modify adjectives ('very', 'extremely', 'slightly'). These adverbs are listed in `degree_adv.json`. 
+		2. Noun chunks containing degree adverbs that modify adjectives ('very', 'extremely', 'slightly'). These adverbs are listed in `worklists/degree_adv.json`. 
 
-		3. Words for measurement ('litre', 'bunch', 'pair', etc). These words are listed in `measurements.json`. 
+		3. Words for measurement ('litre', 'bunch', 'pair', etc). These words are listed in `worklists/measurements.json`. 
 
     4.  Identify noun chunks that require an article and allow for both definite and indefinite articles. These cases include: 
     
         1. Noun chunks modified by a relative clause or other dependents to the right of the noun chunk. 
     
-    	2. Noun chunks headed by relational nouns. Relational nouns (body parts, kinship terms, part-whole terms, etc) are two-place predicates. They typically require a possessive pronoun or a determiner. The list of relational nouns is stored in `relational_nouns.json`. It was created from [a list of human body parts](https://www.britannica.com/dictionary/eb/3000-words/topic/human-body-parts-external) and [a list of kinship terms](https://www.britannica.com/dictionary/eb/3000-words/topic/family-members) taken from [the Britannica Dictionary page](https://www.britannica.com/dictionary).
+    	2. Noun chunks headed by relational nouns. Relational nouns (body parts, kinship terms, part-whole terms, etc) are two-place predicates. They typically require a possessive pronoun or a determiner. The list of relational nouns is stored in `worklists/relational_nouns.json`. It was created from [a list of human body parts](https://www.britannica.com/dictionary/eb/3000-words/topic/human-body-parts-external) and [a list of kinship terms](https://www.britannica.com/dictionary/eb/3000-words/topic/family-members) taken from [the Britannica Dictionary page](https://www.britannica.com/dictionary).
 
     	3. Noun chunks in argument positions (subject, direct object, an argument of a dative verb). We also consider the object of prepositions as verb arguments if they immediately follow the verb (e.g. in 'I looked at X.', but not in 'I saw X at Y'). 
     	
@@ -55,7 +55,7 @@ The script uses the `spaCy` library to find noun chunks in a sentence. It then a
 
 	    1. Historic events, non-GPE locations, works of art, famous constructions.
 
-	    2. Geopolitical entities listed in a file `countries_w_articles.json`. This list was taken from a [paper](https://www.tandfonline.com/doi/full/10.1080/00277738.2020.1731241) on patterns of definite article use with country names. Particularly, from [the table](https://www.tandfonline.com/doi/full/10.1080/00277738.2020.1731241) 'Distribution of country names in relation to definite article use'.  I only took the countries which had  > 50% percentage of definite article use. 
+	    2. Geopolitical entities listed in a file `worklists/countries_w_articles.json`. This list was taken from a [paper](https://www.tandfonline.com/doi/full/10.1080/00277738.2020.1731241) on patterns of definite article use with country names. Particularly, from [the table](https://www.tandfonline.com/doi/full/10.1080/00277738.2020.1731241) 'Distribution of country names in relation to definite article use'.  I only took the countries which had  > 50% percentage of definite article use. 
 
 The form of an indefinite article ('a' or 'an') is identified using the `inflect` library. 
 
