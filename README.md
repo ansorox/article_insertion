@@ -78,10 +78,10 @@ The tests are located in `test_article_insertion.py`.
 #### Noun chunks with the right context
 
 	python article_insertion.py "Matthew saw girl who was singing."
-	['Matthew saw a girl who was singing.', 'Matthew saw the girl who was singing.']`
+	['Matthew saw a girl who was singing.', 'Matthew saw the girl who was singing.']
 
 	python article_insertion.py "Guy in the middle was planning a mutiny."
-	['A guy in the middle was planning a mutiny.', 'The guy in the middle was planning a mutiny.']`
+	['A guy in the middle was planning a mutiny.', 'The guy in the middle was planning a mutiny.']
 
 	python article_insertion.py "Woman with a house in London is visiting on Saturday."
 	['A woman with a house in London is visiting on Saturday.', 'The woman with a house in London is visiting on Saturday.']
