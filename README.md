@@ -3,7 +3,7 @@
 The script `article_insertion.py` inserts missing articles into the sentence. 
 
 
-### Overview
+## Overview
 
 The script uses the `spaCy` library to find noun chunks in a sentence. It then analyses them to see if they require an article. It uses the following algorithm:
 
@@ -60,7 +60,7 @@ The script uses the `spaCy` library to find noun chunks in a sentence. It then a
 The form of an indefinite article ('a' or 'an') is identified using the imported library `inflect`. 
 
 
-### Install
+## Install
 
 The dependencies are the following: 
 * Python3.9
@@ -73,9 +73,9 @@ To run the script enter it in the command line and pass it the sentence that you
 The tests are written with are located in `test_article_insertion.py`.
 
 
-### Examples
+## Examples
 
-##### Noun chunks with the right context
+#### Noun chunks with the right context
 
 	python3 article_insertion.py "Matthew saw girl who was singing."
 	['Matthew saw a girl who was singing.', 'Matthew saw the girl who was singing.']`
@@ -87,7 +87,7 @@ The tests are written with are located in `test_article_insertion.py`.
 	['A woman with a house in London is visiting on Saturday.', 'The woman with a house in London is visiting on Saturday.']
 
    
-##### Relational nouns
+#### Relational nouns
 
 	python3 article_insertion.py "Put the ring on finger."
 	['Put the ring on a finger.', 'Put the ring on the finger.']
@@ -95,7 +95,7 @@ The tests are written with are located in `test_article_insertion.py`.
 	python3 article_insertion.py "I gave it to ex."
 	['I gave it to an ex.', 'I gave it to the ex.']
 
-##### Nouns that are arguments of the verbs
+#### Nouns that are arguments of the verbs
 
 	#nsubj
 	python3 article_insertion.py "Girl came to me."
@@ -124,7 +124,7 @@ The tests are written with are located in `test_article_insertion.py`.
 	[]
 
 
-##### Superlative adjectives and adverbs
+#### Superlative adjectives and adverbs
 	python3 article_insertion.py "It's greatest city in the world."
 	["It's the greatest city in the world."]
 
@@ -135,17 +135,17 @@ The tests are written with are located in `test_article_insertion.py`.
 	["It's the least interesting book."]
 	
 
-##### Ordinal adjective
+#### Ordinal adjective
 	python3 article_insertion.py "Sarah is dressing up for first date."
 	['Sarah is dressing up for the first date.']
 
 
-##### "All of the X"
+#### "All of the X"
 	python3 article_insertion.py "All of students were present."
 	['All of the students passed the test.']
 
 
-##### Noun phrases with degree modifiers and measurement words
+#### Noun phrases with degree modifiers and measurement words
 
 	python3 article_insertion.py "He bought very expensive piece of furniture for his new apartment."
 	['He bought a very expensive piece of furniture for his new apartment.']
@@ -154,7 +154,7 @@ The tests are written with are located in `test_article_insertion.py`.
 	['She has made a lot of progress.']
 
 
-##### Noun phrases in predicative position
+#### Noun phrases in predicative position
 
 	python33 article_insertion.py "He is actor."
 	['He is an actor.', 'He is the actor.']
@@ -166,10 +166,10 @@ The tests are written with are located in `test_article_insertion.py`.
 
 
 
-##### Noun phrases with determiners or other specifiers
+#### Noun phrases with determiners or other specifiers
 
 
-##### Noun phrases with determiners or other specifiers
+#### Noun phrases with determiners or other specifiers
 
 	python3 article_insertion.py "I like this actor"
 	[]
@@ -182,7 +182,7 @@ The tests are written with are located in `test_article_insertion.py`.
 	
 
 
-##### Noun phrases in plural 
+#### Noun phrases in plural 
 
 	python3 article_insertion.py "She bought books."
 	[]
@@ -191,12 +191,12 @@ The tests are written with are located in `test_article_insertion.py`.
 	['She bought a book.', 'She bought the book.']
 
 
-##### Noun phrases headed by uncountable nouns  
+#### Noun phrases headed by uncountable nouns  
 
 	python3 article_insertion.py "She bought sugar."
 	[]
  
-##### Some proper nouns: locations, work of arts, historic events, etc
+#### Some proper nouns: locations, work of arts, historic events, etc
 
 	python3 article_insertion.py "We wanted to visit Golden Gate."
 	['We wanted to visit the Golden Gate.']
@@ -205,7 +205,7 @@ The tests are written with are located in `test_article_insertion.py`.
 	['It is hard to live in the Himalayas.']
 
 
-##### Countries with articles
+#### Countries with articles
 	python3 article_insertion.py "We visited United States."
 	['We visited the United States.']
 
@@ -214,4 +214,3 @@ The tests are written with are located in `test_article_insertion.py`.
 
 	python3 article_insertion.py "We visited Andrew."
 	[]
-
